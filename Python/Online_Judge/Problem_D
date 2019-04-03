@@ -1,0 +1,12 @@
+h,m,s=input().split()
+h=int(h)
+m=int(m)
+s=int(s)
+result=0
+
+for a in range(h+1):
+   for b in range(m+1):
+      for c in range(s+1):
+         if '1' in (str(a)+str(b)+str(c)): result+=1
+	            
+print(result)
