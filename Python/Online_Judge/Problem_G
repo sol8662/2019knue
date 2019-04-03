@@ -1,0 +1,9 @@
+n = int(input())
+
+list = [1,2]
+
+for i in range(2,30): #2 이상 30 미만까지 순차정수를 i에 대입하고 range 객체 리턴
+    cal = list[i-1]+list[i-2]
+    list.append(cal)
+
+print(list[n-1])
