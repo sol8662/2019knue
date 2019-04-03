@@ -1,12 +1,12 @@
-h,m,s=input().split()
-h=int(h)
-m=int(m)
-s=int(s)
-result=0
+h,m,s=input().split()   #입력받을 변수 h, m, s 설정 / 스페이스로 입력값 구분(split())
+h=int(h)   #입력한 h를 정수형으로 변경(문제에서는 시간을 의미)
+m=int(m)   #입력한 m을 정수형으로 변경(문제에서는 시간을 의미)
+s=int(s)   #입력한 s를 정수형으로 변경(문제에서는 시간을 의미)
+result=0   #변수 result값을 0으로 지정
 
-for a in range(h+1):
-   for b in range(m+1):
-      for c in range(s+1):
-         if '1' in (str(a)+str(b)+str(c)): result+=1
+for a in range(h+1):   #0이상 h+1미만의 정수를 순차적으로 a에 대입
+   for b in range(m+1):   #0이상 m+1미만의 정수를 순차적으로 b에 대입
+      for c in range(s+1):   #0이상 c+1미만의 정수를 순차적으로 c에 대입
+         if '1' in (str(a)+str(b)+str(c)): result+=1   #대입된 a,b,c값을 문자형으로 바꿔 더하고(나열하고), 1이 있으면 변수 result값을 1씩 증가
 	            
-print(result)
+print(result)   #변수 result을 화면에 출력
