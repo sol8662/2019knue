@@ -1,9 +1,9 @@
-n = int(input())
+n = int(input())   #입력받을 변수 n을 정수형으로 설정
 
-list = [1,2]
+listdata = [1,2]   #listdata를 리스트[1,2]로 설정
 
-for i in range(2,30): #2 이상 30 미만까지 순차정수를 i에 대입하고 range 객체 리턴
-    cal = list[i-1]+list[i-2]
-    list.append(cal)
+for i in range(2,30):   #2 이상 30 미만까지 순차정수를 i에 대입하고 range 객체 리턴
+    cal = listdata[i-1] + listdata[i-2]   #cal은 listdata라는 리스트의 i-1번째 인덱스와 listdata라는 리스트의 i-2번째 인덱스의 합(i값은 위에서 정한 2부터 30미만의 값)
+    listdata.append(cal)   #listdata.append는 listdata인 리스트[1,2]에 순차적으로 cal 결과값에 따라 추가함 [1,2,3,5,...] 이런식으로..
 
-print(list[n-1])
+print(listdata[n-1])   #listdata라는 리스트의 n-1번째 인덱스 값을 화면에 출력
