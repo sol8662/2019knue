@@ -1,1 +1,30 @@
+k=input()
 
+
+# a={'key값':'val값'} 에서 key값과 val의 자리를 바꾼 새로운 dic인 new_a 생성
+a={'1':'a','10':'b','11':'c','100':'d','101':'e','110':'f','111':'g','1000':'h','1001':'i','1010':'j','1011':'k','1100':'l','1101':'m','1110':'n','1111':'o','10000':'p','10001':'q','10010':'r','10011':'s','10100':'t','10101':'u','10110':'v','10111':'w','11000':'x','11001':'y','11010':'z'}
+
+new_a={}   #빈dic
+for key, val in a.items():   #key, val 자리 바꿈
+    new_a[val]=key
+
+    
+# list n에서 모든 인덱스를 하나씩 추출하여, 각 단어(인덱스)의 알파벳 하나하나를 word라는 list에 담고, 단어(key값)를 숫자(val값)와 연결하여 ch라는 새로운 list 만듬
+n=['chile', 'france', 'mainland', 'alaska', 'russia', 'ukraine', 'uzbekikistan', 'egypt', 'south africa', 'greece', 'netherlands', 'belgium', 'spain', 'italy', 'rumania', 'switzerland', 'slovakia', 'denmark', 'sweden', 'norway', 'germany', 'mexico', 'argentina', 'brazil', 'venezuela', 'malaysia', 'indonesia', 'singapore', 'japan', 'korea', 'vietnam', 'china', 'india', 'srilanka', 'myanmar', 'iran', 'morocco', 'algerie', 'libya', 'gambia', 'senegal', 'mauritania', 'mali', 'guinea', 'niger', 'benin', 'mauritius', 'liberia', 'ghana', 'nigeria', 'gabon', 'zaire', 'angola', 'guinea-bissau', 'ascension', 'seychelles', 'sudan', 'rwanda', 'ethiopia', 'somalia', 'djibouti', 'uganda', 'burundi', 'mozambique', 'zambia', 'madagascar', 'zimbabwe', 'namibia', 'malawi', 'lesotho', 'botswana', 'swaziland', 'eritrea', 'greenland', 'gibraltar', 'luxembourg', 'ireland', 'iceland', 'albania', 'malta', 'cyprus', 'bulgaria', 'lithuania', 'latvia', 'estonia', 'moldova', 'armenia', 'belarus', 'andorra', 'monaco', 'yugoslavia', 'slovenia', 'macedonia', 'belize', 'guatemala', 'honduras', 'nicaragua', 'haiti', 'chad', 'bolivia', 'guyana', 'ecuador', 'guiana', 'martinique', 'surinam', 'uruguay', 'saipan', 'guam', 'brunei', 'nauru', 'vanuatu', 'macao', 'laos', 'bangladesh', 'taiwan', 'maldives', 'lebanon', 'jordan', 'syria', 'iraq', 'oman', 'yemen', 'israel', 'bahrain', 'bhutan', 'mongolia', 'nepal', 'azerbaijan', 'bahamas', 'barbados', 'monsterrat', 'grenada', 'dominica', 'anguilla', 'jamaica', 'aruba', 'madeira', 'liechtenstein']
+ch_num = ""   #문자를 담을 빈변수
+ch=[]   #빈list
+
+for i in range(len(n)):
+    ch_num = ""
+    word=list(n[i])
+    for j in range(len(word)):
+        word_ch=new_a.get(word[j])
+        ch_num += str(word_ch)
+    ch.append(ch_num)
+#print(ch) 확인용
+
+
+#국가명이 숫자로 되어 있는 list ch의 인덱스를 key로 하고, 국가명으로 구성된 list n의 인덱스를 val로 하는 새로운 dic ncn_dic 만듬
+ncn_dic={}
+ncn_dic=dict(zip(ch,n)) #만든 dic
+print(ncn_dic.get(k))
